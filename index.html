@@ -7,83 +7,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --cream:#faf7f2;--beige:#f0e8d8;--sand:#e0d0b8;
-  --brown-light:#c4a882;--brown:#8b6340;--brown-dark:#5c3d1e;
-  --espresso:#2d1a0a;--muted:#7a5c40;--white:#ffffff;
-}
+:root{--cream:#faf7f2;--beige:#f0e8d8;--sand:#e0d0b8;--brown-light:#c4a882;--brown:#8b6340;--brown-dark:#5c3d1e;--espresso:#2d1a0a;--muted:#7a5c40;--white:#fff}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--espresso);overflow-x:hidden}
-
-/* NAV */
 nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:64px;background:rgba(250,247,242,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--sand)}
-.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--espresso);letter-spacing:0.04em}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:0.8rem;font-weight:400;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--espresso)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.78rem;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--brown-dark)}
-
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;padding-top:64px}
-.hero-left{padding:4rem 3rem 4rem 3rem;display:flex;flex-direction:column;justify-content:center}
-.hero-right{height:100vh;position:relative;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover;filter:sepia(20%) brightness(0.85)}
-.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right, var(--cream) 0%, transparent 40%)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:64px}
+.hero-left{padding:4rem 3rem}
+.hero-right{height:calc(100vh - 64px);overflow:hidden;position:relative}
+.hero-right img{width:100%;height:100%;object-fit:cover;filter:sepia(20%) brightness(0.8)}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--cream) 0%,transparent 50%)}
 .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:2rem}
 .eyebrow-line{width:32px;height:1px;background:var(--brown-light)}
-.eyebrow-text{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--brown);font-weight:500}
+.eyebrow-text{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--brown);font-weight:500}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;color:var(--espresso);line-height:1.05;margin-bottom:1.25rem}
 .hero h1 em{font-style:italic;color:var(--brown)}
-.hero-sub{font-size:0.97rem;color:var(--muted);max-width:420px;line-height:1.8;margin-bottom:2.5rem;font-weight:300}
+.hero-sub{font-size:0.95rem;color:var(--muted);max-width:420px;line-height:1.8;margin-bottom:2.5rem;font-weight:300}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-fill{background:var(--espresso);color:var(--cream);padding:12px 28px;border-radius:2px;text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;transition:background 0.2s}
+.btn-fill{background:var(--espresso);color:var(--cream);padding:12px 28px;border-radius:2px;text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;transition:background 0.2s}
 .btn-fill:hover{background:var(--brown-dark)}
-.btn-ghost{border:1px solid var(--sand);color:var(--brown-dark);padding:12px 28px;border-radius:2px;text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;transition:all 0.2s}
+.btn-ghost{border:1px solid var(--sand);color:var(--brown-dark);padding:12px 28px;border-radius:2px;text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;transition:all 0.2s}
 .btn-ghost:hover{border-color:var(--brown);background:var(--beige)}
-
-/* SECTIONS */
 .divider{width:100%;height:1px;background:var(--sand)}
 section{padding:5rem 3rem;max-width:1000px;margin:0 auto}
 .sec-label{display:flex;align-items:center;gap:12px;margin-bottom:0.75rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--brown)}
 .sec-label::after{content:'';flex:1;height:1px;background:var(--sand)}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--espresso);margin-bottom:2.5rem;line-height:1.2}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start}
-.about-text p{color:var(--muted);margin-bottom:1rem;font-size:0.95rem;line-height:1.85;font-weight:300}
-.stats-col{border:1px solid var(--sand)}
-.stat-item{padding:1.25rem 1.5rem;border-bottom:1px solid var(--sand)}
-.stat-item:last-child{border-bottom:none}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--brown-dark);line-height:1}
-.stat-lbl{font-size:0.72rem;color:var(--muted);margin-top:3px;letter-spacing:0.04em}
-
-/* SKILLS */
-.skills-wrap{background:var(--beige);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--sand)}
-.skill-card{background:var(--beige);padding:1.75rem 1.5rem;transition:background 0.25s;position:relative;overflow:hidden}
-.skill-card::before{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--brown);transition:width 0.35s}
-.skill-card:hover{background:var(--cream)}
-.skill-card:hover::before{width:100%}
-.skill-icon{width:34px;height:34px;border:1px solid var(--brown-light);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-.skill-icon svg{width:15px;height:15px;stroke:var(--brown);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.skill-title{font-weight:500;font-size:0.88rem;color:var(--espresso);margin-bottom:0.6rem}
-.tags{display:flex;flex-wrap:wrap;gap:4px}
-.tag{font-size:0.68rem;padding:3px 7px;border:1px solid var(--sand);color:var(--brown-dark);border-radius:1px}
-
-/* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.proj-card{border:1px solid var(--sand);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.25s,box-shadow 0.25s}
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--sand);border:1px solid var(--sand);margin-bottom:3rem}
+.stat-box{background:var(--cream);padding:1.5rem;text-align:center}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--brown-dark);line-height:1}
+.stat-l{font-size:0.72rem;color:var(--muted);margin-top:4px}
+/* DOMAINES */
+.domaines-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--sand)}
+.domaine-card{background:var(--beige);padding:1.75rem 1.5rem;position:relative;overflow:hidden;transition:background 0.25s}
+.domaine-card::before{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--brown);transition:width 0.35s}
+.domaine-card:hover{background:var(--cream)}
+.domaine-card:hover::before{width:100%}
+.domaine-icon{width:34px;height:34px;border:1px solid var(--brown-light);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.domaine-icon svg{width:15px;height:15px;stroke:var(--brown);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.domaine-title{font-weight:500;font-size:0.88rem;color:var(--espresso);margin-bottom:0.5rem}
+.domaine-tags{display:flex;flex-wrap:wrap;gap:4px}
+.dtag{font-size:0.68rem;padding:2px 7px;border:1px solid var(--sand);color:var(--brown-dark);border-radius:1px}
+/* FEATURED PROJECT */
+.featured{background:var(--espresso);padding:3rem;border-radius:2px;margin-bottom:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.feat-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--brown-light);margin-bottom:1rem}
+.feat-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--cream);margin-bottom:1rem;line-height:1.2}
+.feat-desc{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
+.feat-stack{display:flex;flex-wrap:wrap;gap:5px}
+.feat-tag{font-size:0.68rem;padding:3px 9px;border:1px solid rgba(255,255,255,0.2);color:var(--brown-light);border-radius:1px}
+.feat-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.08)}
+.metric-box{background:var(--espresso);padding:1.25rem;text-align:center}
+.metric-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--cream)}
+.metric-l{font-size:0.7rem;color:var(--brown-light);margin-top:3px}
+.metric-sub{font-size:0.62rem;color:rgba(255,255,255,0.4);margin-top:2px}
+/* PROJECTS GRID */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.proj-card{border:1px solid var(--sand);overflow:hidden;border-radius:2px;transition:transform 0.25s,box-shadow 0.25s;display:flex;flex-direction:column}
 .proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(45,26,10,0.1)}
-.proj-img{height:200px;overflow:hidden;position:relative}
+.proj-img{height:180px;overflow:hidden;position:relative}
 .proj-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
-.proj-card:hover .proj-img img{transform:scale(1.05)}
-.proj-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom, transparent 40%, rgba(45,26,10,0.7) 100%);display:flex;align-items:flex-end;padding:1rem}
-.proj-year-badge{font-size:0.68rem;color:rgba(255,255,255,0.85);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.3);padding:4px 10px;border-radius:1px}
+.proj-card:hover .proj-img img{transform:scale(1.06)}
+.proj-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(45,26,10,0.7))}
+.proj-badge{position:absolute;bottom:1rem;left:1rem;font-size:0.65rem;color:rgba(255,255,255,0.85);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.3);padding:3px 9px;border-radius:1px}
 .proj-info{padding:1.5rem;background:var(--white);flex:1;display:flex;flex-direction:column}
-.proj-info h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--espresso);margin-bottom:0.5rem;font-weight:400}
-.proj-info p{color:var(--muted);font-size:0.84rem;line-height:1.75;margin-bottom:1.25rem;font-weight:300;flex:1}
-.stack{display:flex;flex-wrap:wrap;gap:5px}
-.stack-tag{font-size:0.68rem;padding:3px 8px;background:var(--beige);border:1px solid var(--sand);color:var(--brown-dark);border-radius:1px}
-
+.proj-info h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--espresso);margin-bottom:0.4rem;font-weight:400}
+.proj-info p{color:var(--muted);font-size:0.82rem;line-height:1.75;margin-bottom:1rem;flex:1;font-weight:300}
+.pstack{display:flex;flex-wrap:wrap;gap:4px}
+.ptag{font-size:0.65rem;padding:2px 7px;background:var(--beige);border:1px solid var(--sand);color:var(--brown-dark);border-radius:1px}
 /* TIMELINE */
 .timeline{position:relative;padding-left:1.5rem}
 .timeline::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:1px;background:var(--sand)}
@@ -93,108 +87,112 @@ section{padding:5rem 3rem;max-width:1000px;margin:0 auto}
 .tl-title{font-weight:500;font-size:0.95rem;color:var(--espresso)}
 .tl-sub{color:var(--muted);font-size:0.84rem;margin-top:2px}
 .tl-badge{display:inline-flex;align-items:center;gap:5px;margin-top:8px;background:var(--beige);border:1px solid var(--sand);color:var(--brown-dark);font-size:0.7rem;padding:3px 9px;border-radius:1px}
-
 /* CONTACT */
 .contact-wrap{background:var(--espresso);padding:5rem 3rem;text-align:center}
 .contact-wrap h2{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--cream);font-weight:300;margin-bottom:0.75rem}
 .contact-wrap p{color:var(--brown-light);font-size:0.9rem;margin-bottom:2rem;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.75;font-weight:300}
-.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-.contact-btn{display:inline-block;background:var(--cream);color:var(--espresso);padding:12px 28px;border-radius:1px;font-weight:500;text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;transition:opacity 0.2s}
-.contact-btn:hover{opacity:0.88}
-.contact-btn.outline{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.3)}
-.contact-btn.outline:hover{background:rgba(255,255,255,0.08)}
-
+.clinks{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.cbtn{display:inline-block;background:var(--cream);color:var(--espresso);padding:12px 28px;border-radius:1px;font-weight:500;text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;transition:opacity 0.2s}
+.cbtn:hover{opacity:0.88}
+.cbtn.o{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.3)}
 footer{text-align:center;padding:1.5rem;color:var(--brown-light);font-size:0.76rem;letter-spacing:0.06em;background:var(--espresso);border-top:1px solid rgba(255,255,255,0.06)}
-
 @media(max-width:768px){
   .hero{grid-template-columns:1fr}.hero-right{display:none}
-  nav{padding:0 1.25rem}.nav-links{gap:1.25rem}
+  nav{padding:0 1.25rem}.nav-links{gap:1rem}
   section{padding:3rem 1.25rem}
-  .about-grid,.projects-grid{grid-template-columns:1fr}
-  .hero-left{padding:2rem 1.25rem}
+  .featured,.proj-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
   .contact-wrap{padding:3rem 1.25rem}
 }
 </style>
 </head>
 <body>
-
 <nav>
   <span class="nav-name">Manuela Fosso</span>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#domaines">Domaines</a></li>
     <li><a href="#projets">Projets</a></li>
+    <li><a href="#formation">Formation</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-left">
-    <div class="eyebrow">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">Disponible · Diplôme juin 2026 · Ottawa</span>
-    </div>
+    <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-text">Diplôme TGI · Juin 2026 · Ottawa</span></div>
     <h1>Manuela<br><em>Hily Appotan</em><br>Fosso</h1>
-    <p class="hero-sub">Développeuse web & communicatrice créative — je combines la rigueur technique et l'élégance visuelle pour créer des expériences numériques qui marquent.</p>
+    <p class="hero-sub">Développeuse full-stack, spécialiste IA & cybersécurité — je conçois des systèmes intelligents qui fonctionnent, de la couche réseau jusqu'à l'interface utilisateur.</p>
     <div class="hero-btns">
       <a href="#projets" class="btn-fill">Voir mes projets</a>
       <a href="#contact" class="btn-ghost">Me contacter</a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=80" alt="Développement web">
+    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&q=80" alt="Code & Tech">
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="sec-label">Qui suis-je</div>
-  <h2 class="sec-title">À propos de moi</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>Étudiante en Technologie du Génie Informatique au Collège La Cité à Ottawa, je développe un profil hybride rare : développement web full-stack, applications mobiles, design d'interfaces et stratégie de communication — tout en une.</p>
-      <p>Ce qui me distingue, c'est ma capacité à comprendre à la fois l'aspect technique et l'aspect humain d'un projet. Je construis des choses qui fonctionnent, et qui font ressentir quelque chose.</p>
-      <p>Bilingue français-anglais, rigoureuse et autonome, je suis prête à m'investir à 200% là où mes compétences font une réelle différence.</p>
-    </div>
-    <div class="stats-col">
-      <div class="stat-item"><div class="stat-num">4 ans</div><div class="stat-lbl">de formation en informatique</div></div>
-      <div class="stat-item"><div class="stat-num">FR / EN</div><div class="stat-lbl">parfaitement bilingue</div></div>
-      <div class="stat-item"><div class="stat-num">5+</div><div class="stat-lbl">projets réalisés</div></div>
-      <div class="stat-item"><div class="stat-num">Juin 26</div><div class="stat-lbl">diplôme TGI prévu</div></div>
-    </div>
+  <h2 class="sec-title">Profil complet</h2>
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-n">4 ans</div><div class="stat-l">de formation informatique</div></div>
+    <div class="stat-box"><div class="stat-n">8+</div><div class="stat-l">domaines maîtrisés</div></div>
+    <div class="stat-box"><div class="stat-n">84%</div><div class="stat-l">accuracy modèle IA perso</div></div>
+    <div class="stat-box"><div class="stat-n">FR/EN</div><div class="stat-l">parfaitement bilingue</div></div>
   </div>
+  <p style="color:var(--muted);font-size:0.97rem;line-height:1.85;font-weight:300;max-width:720px">Étudiante en Technologie du Génie Informatique au Collège La Cité (diplôme juin 2026), j'ai développé une expertise rare couvrant l'intégralité du spectre informatique : développement web full-stack, intelligence artificielle appliquée, cybersécurité, systèmes embarqués, développement mobile iOS & Android, architecture des systèmes, bases de données et cloud. Bilingue français-anglais, rigoureuse et passionnée, je construis des solutions réelles qui fonctionnent.</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- SKILLS -->
-<div class="skills-wrap" id="skills">
+<div style="background:var(--beige);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)" id="domaines">
   <section style="padding-top:4rem;padding-bottom:4rem">
-    <div class="sec-label">Savoir-faire</div>
-    <h2 class="sec-title">Compétences</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <div class="skill-title">Développement Web</div>
-        <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">ASP.NET</span><span class="tag">C#</span></div>
+    <div class="sec-label">Expertise</div>
+    <h2 class="sec-title">Domaines de compétence</h2>
+    <div class="domaines-grid">
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="domaine-title">Développement Web Full-Stack</div>
+        <div class="domaine-tags"><span class="dtag">Next.js</span><span class="dtag">React</span><span class="dtag">TypeScript</span><span class="dtag">ASP.NET C#</span><span class="dtag">PHP</span><span class="dtag">NestJS</span></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <div class="skill-title">Mobile & Backend</div>
-        <div class="tags"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">NestJS</span><span class="tag">API REST</span></div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="domaine-title">Intelligence Artificielle</div>
+        <div class="domaine-tags"><span class="dtag">DistilBERT</span><span class="dtag">YOLOv8</span><span class="dtag">NLP</span><span class="dtag">Fine-tuning</span><span class="dtag">Python</span><span class="dtag">TensorFlow</span></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-        <div class="skill-title">Design & Création</div>
-        <div class="tags"><span class="tag">Canva</span><span class="tag">Wix</span><span class="tag">UI/UX</span><span class="tag">Photoshop</span></div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="domaine-title">Cybersécurité</div>
+        <div class="domaine-tags"><span class="dtag">Kali Linux</span><span class="dtag">Metasploit</span><span class="dtag">Nmap</span><span class="dtag">Pentest</span><span class="dtag">SQL Injection</span><span class="dtag">SIEM</span></div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="skill-title">Communication</div>
-        <div class="tags"><span class="tag">Rédaction</span><span class="tag">Réseaux sociaux</span><span class="tag">Marketing</span><span class="tag">FR/EN</span></div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="domaine-title">Développement Mobile</div>
+        <div class="domaine-tags"><span class="dtag">Kotlin</span><span class="dtag">Android</span><span class="dtag">Swift</span><span class="dtag">iOS</span><span class="dtag">Geolocalisation</span><span class="dtag">Unity</span></div>
+      </div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+        <div class="domaine-title">Systèmes Embarqués</div>
+        <div class="domaine-tags"><span class="dtag">FreeRTOS</span><span class="dtag">VHDL</span><span class="dtag">LoRa</span><span class="dtag">Jetson Nano</span><span class="dtag">Arduino</span><span class="dtag">C++</span></div>
+      </div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="domaine-title">Bases de Données</div>
+        <div class="domaine-tags"><span class="dtag">SQL</span><span class="dtag">MongoDB</span><span class="dtag">Cassandra</span><span class="dtag">Entity Framework</span><span class="dtag">NoSQL</span></div>
+      </div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="domaine-title">Réseaux & Systèmes</div>
+        <div class="domaine-tags"><span class="dtag">TCP/IP</span><span class="dtag">Azure VNet</span><span class="dtag">Docker</span><span class="dtag">Linux</span><span class="dtag">Windows Server</span></div>
+      </div>
+      <div class="domaine-card">
+        <div class="domaine-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="domaine-title">Sciences des Données</div>
+        <div class="domaine-tags"><span class="dtag">Python</span><span class="dtag">Pandas</span><span class="dtag">scikit-learn</span><span class="dtag">K-means</span><span class="dtag">NLP</span><span class="dtag">Visualisation</span></div>
       </div>
     </div>
   </section>
@@ -202,67 +200,101 @@ footer{text-align:center;padding:1.5rem;color:var(--brown-light);font-size:0.76r
 
 <div class="divider"></div>
 
-<!-- PROJECTS -->
 <section id="projets">
   <div class="sec-label">Réalisations</div>
-  <h2 class="sec-title">Mes projets</h2>
-  <div class="projects-grid">
+  <h2 class="sec-title">Projets phares</h2>
 
+  <!-- FEATURED: IA SOLITUDE -->
+  <div class="featured">
+    <div>
+      <div class="feat-label">Projet IA Personnel · Recherche Appliquée</div>
+      <div class="feat-title">Détection de la Solitude chez les Étudiants Internationaux</div>
+      <div class="feat-desc">Système complet de NLP basé sur le fine-tuning de DistilBERT pour détecter et classifier les niveaux de solitude (faible, moyen, élevé) chez les étudiants internationaux. Pipeline double-modèle : détection du profil international + classification de la solitude. Dataset FIG-Loneliness, 50 textes analysés, rapport automatique généré.</div>
+      <div class="feat-stack">
+        <span class="feat-tag">DistilBERT</span><span class="feat-tag">Python</span><span class="feat-tag">HuggingFace</span><span class="feat-tag">Fine-tuning</span><span class="feat-tag">NLP</span><span class="feat-tag">scikit-learn</span><span class="feat-tag">Pandas</span>
+      </div>
+    </div>
+    <div class="feat-metrics">
+      <div class="metric-box"><div class="metric-n">84.3%</div><div class="metric-l">Accuracy</div><div class="metric-sub">Modèle solitude</div></div>
+      <div class="metric-box"><div class="metric-n">100%</div><div class="metric-l">F1-Score</div><div class="metric-sub">Modèle international</div></div>
+      <div class="metric-box"><div class="metric-n">2</div><div class="metric-l">Modèles</div><div class="metric-sub">Pipeline complet</div></div>
+      <div class="metric-box"><div class="metric-n">3</div><div class="metric-l">Classes</div><div class="metric-sub">Low/Med/High</div></div>
+    </div>
+  </div>
+
+  <div class="proj-grid">
     <div class="proj-card">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="SmartCart AI">
-        <div class="proj-img-overlay"><span class="proj-year-badge">Capstone · 2025–2026</span></div>
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="SmartCart">
+        <div class="proj-overlay"></div><span class="proj-badge">Capstone · 2025–2026</span>
       </div>
       <div class="proj-info">
         <h3>SmartCart AI Platform</h3>
-        <p>Tableau de bord intelligent connecté à une IA de détection (YOLOv8 sur Jetson Nano). Interface animée, JWT+2FA, WebSocket temps réel et module Business Intelligence. Développé en équipe de 3.</p>
-        <div class="stack"><span class="stack-tag">Next.js</span><span class="stack-tag">TypeScript</span><span class="stack-tag">NestJS</span><span class="stack-tag">YOLOv8</span><span class="stack-tag">WebSocket</span><span class="stack-tag">JWT+2FA</span></div>
+        <p>Tableau de bord web complet connecté à YOLOv8 sur Jetson Nano. Interface animée Liquid Glass, JWT+2FA, WebSocket temps réel, Business Intelligence. Équipe de 3.</p>
+        <div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">NestJS</span><span class="ptag">YOLOv8</span><span class="ptag">WebSocket</span></div>
       </div>
     </div>
-
     <div class="proj-card">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80" alt="Parfumerie Vanille">
-        <div class="proj-img-overlay"><span class="proj-year-badge">E-commerce</span></div>
+        <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80" alt="Parfumerie">
+        <div class="proj-overlay"></div><span class="proj-badge">Sécurité Web · PHP</span>
       </div>
       <div class="proj-info">
-        <h3>Parfumerie Vanille</h3>
-        <p>Site e-commerce de boutique de parfums vanillés (Tom Ford, Kayali, Sol de Janeiro...). Système complet de commandes avec base de données, gestion des statuts et confirmation de commande.</p>
-        <div class="stack"><span class="stack-tag">ASP.NET Core</span><span class="stack-tag">C#</span><span class="stack-tag">Entity Framework</span><span class="stack-tag">SQL</span><span class="stack-tag">Bootstrap</span></div>
+        <h3>Parfumerie Vanille Chic</h3>
+        <p>E-commerce PHP complet avec authentification sécurisée, protection injection SQL, blocage après tentatives multiples, CRUD produits et vraies photos produits.</p>
+        <div class="pstack"><span class="ptag">PHP</span><span class="ptag">SQL</span><span class="ptag">Anti-SQLi</span><span class="ptag">Sessions</span><span class="ptag">CRUD</span></div>
       </div>
     </div>
-
     <div class="proj-card">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80" alt="Blackjack Android">
-        <div class="proj-img-overlay"><span class="proj-year-badge">Application Mobile</span></div>
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="Jeu Unity">
+        <div class="proj-overlay"></div><span class="proj-badge">Game Dev · Unity</span>
+      </div>
+      <div class="proj-info">
+        <h3>Jeu d'obstacles spatial — Unity</h3>
+        <p>Jeu de navigation de navette spatiale évitant des obstacles développé avec Unity. Physique, collisions, score, niveaux et interface de jeu complète.</p>
+        <div class="pstack"><span class="ptag">Unity</span><span class="ptag">C#</span><span class="ptag">Game Design</span><span class="ptag">Physics</span></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="iOS Apps">
+        <div class="proj-overlay"></div><span class="proj-badge">iOS · Swift</span>
+      </div>
+      <div class="proj-info">
+        <h3>Applications iOS — 3 projets</h3>
+        <p>Suite de 3 applications iOS : géolocalisation en temps réel, vente de vêtements avec catalogue et panier, et application de recettes avec IA de suggestions.</p>
+        <div class="pstack"><span class="ptag">Swift</span><span class="ptag">Xcode</span><span class="ptag">CoreLocation</span><span class="ptag">UIKit</span></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80" alt="Blackjack">
+        <div class="proj-overlay"></div><span class="proj-badge">Android · Kotlin</span>
       </div>
       <div class="proj-info">
         <h3>Blackjack Android</h3>
-        <p>Application mobile Android complète du jeu de Blackjack. Gestion du paquet de cartes, logique de jeu parieur vs maison, adaptateur personnalisé et gestion des gestes tactiles.</p>
-        <div class="stack"><span class="stack-tag">Kotlin</span><span class="stack-tag">Android Studio</span><span class="stack-tag">Gradle</span><span class="stack-tag">GestureDetector</span><span class="stack-tag">POO</span></div>
+        <p>Application mobile Blackjack complète en Kotlin. Logique de jeu, adaptateur de cartes personnalisé, gestion des gestes tactiles et interface native Android.</p>
+        <div class="pstack"><span class="ptag">Kotlin</span><span class="ptag">Android Studio</span><span class="ptag">GestureDetector</span><span class="ptag">RecyclerView</span></div>
       </div>
     </div>
-
     <div class="proj-card">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="Site jeux vidéo">
-        <div class="proj-img-overlay"><span class="proj-year-badge">Design Web</span></div>
+        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80" alt="Cybersécurité">
+        <div class="proj-overlay"></div><span class="proj-badge">Cybersécurité · Pentest</span>
       </div>
       <div class="proj-info">
-        <h3>GameZone — Site jeux vidéo</h3>
-        <p>Site web thématique dédié à l'univers des jeux vidéo. Design moderne et immersif, navigation intuitive, présentation de contenu multimédia et expérience utilisateur optimisée.</p>
-        <div class="stack"><span class="stack-tag">HTML/CSS</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Design UI/UX</span><span class="stack-tag">Responsive</span></div>
+        <h3>Penetration Testing — Kali Linux</h3>
+        <p>Examen pratique de pénétration sur VM Ubuntu via Metasploit (CVE-2010-4221 ProFTPD). Rapport d'intrusion complet, Nmap, exploitation et documentation.</p>
+        <div class="pstack"><span class="ptag">Kali Linux</span><span class="ptag">Metasploit</span><span class="ptag">Nmap</span><span class="ptag">CVE</span><span class="ptag">Rapport</span></div>
       </div>
     </div>
-
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- FORMATION -->
-<section>
+<section id="formation">
   <div class="sec-label">Parcours</div>
   <h2 class="sec-title">Formation</h2>
   <div class="timeline">
@@ -271,10 +303,8 @@ footer{text-align:center;padding:1.5rem;color:var(--brown-light);font-size:0.76r
       <div class="tl-date">2023 – 2026</div>
       <div class="tl-title">Technologie du Génie Informatique (TGI) — 3 ans</div>
       <div class="tl-sub">Collège La Cité — Ottawa, Ontario</div>
-      <span class="tl-badge">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Diplôme prévu juin 2026
-      </span>
+      <div style="margin-top:8px;color:var(--muted);font-size:0.82rem;line-height:1.7">Développement web & mobile · IA & sciences des données · Cybersécurité · Systèmes embarqués · Réseaux · Bases de données · Architecture · Jeux vidéo · Cloud Azure</div>
+      <span class="tl-badge">✓ Diplôme prévu juin 2026</span>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
@@ -287,17 +317,14 @@ footer{text-align:center;padding:1.5rem;color:var(--brown-light);font-size:0.76r
 
 <div class="divider"></div>
 
-<!-- CONTACT -->
 <div class="contact-wrap" id="contact">
   <h2>Travaillons ensemble</h2>
-  <p>Disponible dès maintenant pour un poste en communications, marketing ou développement à Ottawa.</p>
-  <div class="contact-links">
-    <a href="mailto:hilymanuela@gmail.com" class="contact-btn">hilymanuela@gmail.com</a>
-    <a href="tel:8196655719" class="contact-btn outline">819 665-5719</a>
+  <p>Disponible pour des postes en développement, IA, cybersécurité ou support TI à Ottawa et région.</p>
+  <div class="clinks">
+    <a href="mailto:hilymanuela@gmail.com" class="cbtn">hilymanuela@gmail.com</a>
+    <a href="tel:8196655719" class="cbtn o">819 665-5719</a>
   </div>
 </div>
-
 <footer>© 2026 Manuela Hily Appotan Fosso · Ottawa, Ontario</footer>
-
 </body>
 </html>
